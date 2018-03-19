@@ -67,9 +67,6 @@ public class MainActivity extends AppCompatActivity {
 				Glide.with(MainActivity.this)
 						.load(item)
 						.into((ImageView) helper.getView(R.id.img));
-//				Uri uri = Uri.parse(item);
-//				SimpleDraweeView draweeView = helper.getView(R.id.img);
-//				draweeView.setImageURI(uri);
 				
 				helper.setOnItemClickListener(new OnRecycleItemClickListener() {
 					@Override
