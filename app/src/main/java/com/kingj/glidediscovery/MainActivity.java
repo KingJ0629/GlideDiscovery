@@ -10,8 +10,13 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
 	
@@ -52,6 +57,17 @@ public class MainActivity extends AppCompatActivity {
 	
 	RecyclerView mRecyclerView;
 	
+	OkHttpClient client = new OkHttpClient();
+	
+	String run(String url) throws IOException {
+		Request request = new Request.Builder()
+				.url(url)
+				.build();
+		
+		Response response = client.newCall(request).execute();
+		return response.body().string();
+	}
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -78,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
 			}
 		};
 		mRecyclerView.setAdapter(mAdapter);
-		
 //		List<String> list = new ArrayList<>();
 //		list.add("语文");
 //		list.add("数学");
