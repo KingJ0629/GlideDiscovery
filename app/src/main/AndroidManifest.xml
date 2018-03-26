@@ -22,6 +22,9 @@
         </activity>
 
         <activity android:name=".Main2Activity"></activity>
+
+        <service android:name=".TestService"/>
+        <service android:name=".TestService2"/>
     </application>
 
 </manifest>
