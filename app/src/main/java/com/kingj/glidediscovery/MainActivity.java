@@ -73,11 +73,6 @@ public class MainActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		Intent i1 = new Intent(this, TestService.class);
-		startService(i1);
-		Intent i2 = new Intent(this, TestService2.class);
-		startService(i2);
-		
 		mRecyclerView = findViewById(R.id.recycler);
 		mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 		List<String> list = Arrays.asList(imgs);
